@@ -14,9 +14,9 @@ cd NISSL-YOLOv5/yolov5
 #Install Dependencies
 pip install -r requirements.txt
 ```
-For all the executions current path should be ** ~/NISSL-YOLOv5/yolov5/ **
+For all the executions current path should be **~/NISSL-YOLOv5/yolov5/**
 
-Trained weights file (.pt file) ** ~/NISSL-YOLOv5/yolov5/trained_weights/best.pt **
+Trained weights file (.pt file) **~/NISSL-YOLOv5/yolov5/trained_weights/best.pt**
 ### Training the model
 The Ground Truth Data are in Yolo format, no conversion is needed.
  
@@ -31,7 +31,7 @@ The Ground Truth Data are in Yolo format, no conversion is needed.
 python detect.py --weights trained_weights/best.pt --img 500 --conf 0.4 --iou-thres 0.45 --source ../test/images
 ```
 ### Testing on Full Section (18k x 24k) 
-Add the 16-bit Jp2 files to ** ~/NISSL-YOLOv5/yolov5/jp2_section/ **  folder without normalization.
+Add the 16-bit Jp2 files to **~/NISSL-YOLOv5/yolov5/jp2_section/**  folder without normalization.
 ```bash
 python detect_fullscan.py --weights <trained weights.pt> --jp2_section_path <path to jp2 file> --output_filename <output file_name.png>
 
