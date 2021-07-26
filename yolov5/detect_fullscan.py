@@ -138,13 +138,14 @@ img_uint8 = np.uint8(img)
 
 img8 = img_uint8.copy()
 
+tile_size = 500
 #starting index are ci, ri
 ci, ri = 0,0
-x ,y = ci*500, ri*500
+x ,y = ci*tile_size, ri*tile_size
 
-grid_size_x = img8.size[0]/500#36
-grid_size_y = img8.size[1]/500#48
-tile_size = 500
+grid_size_x = img8.size[0]//tile_size#36
+grid_size_y = img8.size[1]//tile_size#48
+
 #crop the region from the section
 region = img8[x:x+(tile_size*grid_size_x),y:y+(tile_size*grid_size_y)]
 
