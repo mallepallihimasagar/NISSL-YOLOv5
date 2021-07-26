@@ -143,8 +143,8 @@ tile_size = 500
 ci, ri = 0,0
 x ,y = ci*tile_size, ri*tile_size
 
-grid_size_x = img8.size[0]//tile_size#36
-grid_size_y = img8.size[1]//tile_size#48
+grid_size_x = img8.shape[0]//tile_size#36
+grid_size_y = img8.shape[1]//tile_size#48
 
 #crop the region from the section
 region = img8[x:x+(tile_size*grid_size_x),y:y+(tile_size*grid_size_y)]
