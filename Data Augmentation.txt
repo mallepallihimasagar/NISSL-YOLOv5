@@ -1,0 +1,17 @@
+
+Nissl - v1 nissl_yolov5
+==============================
+
+It includes 813 images.
+Nissl annotations are converted to YOLO v5 PyTorch format.
+
+The following pre-processing was applied to each image:
+* Auto-orientation of pixel data (with EXIF-orientation stripping)
+
+The following augmentation was applied to create 3 versions of each source image:
+* 50% probability of horizontal flip
+* 50% probability of vertical flip
+* Random brigthness adjustment of between -17 and +17 percent
+* Salt and pepper noise was applied to 2 percent of pixels
+
+
