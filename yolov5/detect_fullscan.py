@@ -55,7 +55,7 @@ from dotmap import DotMap
 
 
 def detect(weights = 'runs/train/yolov5s_results/weights/best.pt',save_img=False):
-    opt = {'weights': [weights], 'source': '../point_cloud', 'img_size': 500, 'conf_thres': 0.4, 'iou_thres': 0.45, 'device': '', 'view_img': False, 'save_txt': False, 'save_conf': False, 'classes': None, 'agnostic_nms': False, 'augment': False, 'update': False, 'project': 'runs/detect', 'name': 'exp', 'exist_ok': False}
+    opt = {'weights': weights, 'source': 'point_cloud', 'img_size': 500, 'conf_thres': 0.4, 'iou_thres': 0.45, 'device': '', 'view_img': False, 'save_txt': False, 'save_conf': False, 'classes': None, 'agnostic_nms': False, 'augment': False, 'update': False, 'project': 'runs/detect', 'name': 'exp', 'exist_ok': False}
 
 
     opt = DotMap(opt)
@@ -167,10 +167,10 @@ for j in range(grid_size_y):
 
         # do preprocessing and send it to model get the coordiantes
         #save the tile in jpg to /content/point_cloud
-        cv2.imwrite('/content/point_cloud/tile.jpg',tile)
+        cv2.imwrite('point_cloud/tile.jpg',tile)
         with torch.no_grad():
             preds = detect(weights)
-            for i, det in enumerate(preds):
+            for ii, det in enumerate(preds):
                 det = det.cpu()
                 for *xyxy, conf, cls in reversed(det):
                     x1,y1,x2,y2 = xyxy[0].item(),xyxy[1].item(),xyxy[2].item(),xyxy[3].item()
