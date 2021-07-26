@@ -142,8 +142,8 @@ img8 = img_uint8.copy()
 ci, ri = 0,0
 x ,y = ci*500, ri*500
 
-grid_size_x = 36
-grid_size_y = 48
+grid_size_x = img8.size[0]/500#36
+grid_size_y = img8.size[1]/500#48
 tile_size = 500
 #crop the region from the section
 region = img8[x:x+(tile_size*grid_size_x),y:y+(tile_size*grid_size_y)]
